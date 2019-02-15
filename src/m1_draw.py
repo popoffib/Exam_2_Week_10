@@ -29,7 +29,7 @@ def test_draw_a_picture():
     print('###################################################')
     print('Test 1 of draw_a_picture.')
     print('Called with point1 =', point1)
-    print( 'n =', n, ' color = blue')
+    print('n =', n, ' color = blue')
     print('###################################################')
     draw_a_picture(point1, n, 'blue', test_window)
 
@@ -39,7 +39,7 @@ def test_draw_a_picture():
     print('###################################################')
     print('Test 2 of draw_a_picture.')
     print('Called with point2 =', point2)
-    print( 'n =', n, ' color = green')
+    print('n =', n, ' color = green')
     print('###################################################')
     draw_a_picture(point2, n, 'green', test_window)
     test_window.close_on_mouse_click()
@@ -127,8 +127,31 @@ def is_prime(n):
 #
 #
 #
-def draw_a_picture(point, n, color, window):
 
+
+def draw_a_picture(point, n, color, window):
+    circle = rg.Circle(point, 100)
+    circle.attach_to(window)
+    corner1 = (point.x - 80, point.y - 40)
+    corner2 = (point.x + 80, point.y + 40)
+    rect = rg.Rectangle(corner1, corner2)
+    rect.attach_to(window)
+
+    number_of_lines = 1
+    start_point = point
+    stop = rg.Point(point.x + 160, point.y)
+    s = 160/(n-1)
+    for k in range(n):
+        line = rg.Line(start_point, stop)
+        if is_prime(number_of_lines):
+            line.color = 'orange'
+        else:
+            line.color = color
+        line.attach_to(window)
+        stop = rg.Point(stop.x - s, stop.y)
+        number_of_lines = number_of_lines + 1
+
+    window.render(.5)
     pass
 
 
