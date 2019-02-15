@@ -140,7 +140,7 @@ def draw_a_picture(point, n, color, window):
     number_of_lines = 1
     start_point = point
     stop = rg.Point(point.x + 160, point.y)
-    s = 160/(n-1)
+    s = (160/(n-1))
     for k in range(n):
         line = rg.Line(start_point, stop)
         if is_prime(number_of_lines):
@@ -148,10 +148,10 @@ def draw_a_picture(point, n, color, window):
         else:
             line.color = color
         line.attach_to(window)
-        stop = rg.Point(stop.x - s, stop.y)
+        stop = rg.Point((stop.x - s), stop.y)
         number_of_lines = number_of_lines + 1
 
-    window.render(.5)
+    window.render(0.5)
     pass
 
 
