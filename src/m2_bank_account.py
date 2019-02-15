@@ -122,29 +122,29 @@ def run_test_init():
     # DONE: 2. Add two more test cases for your Bank class below.
     # ---------------------------------------------------------------------
 
-    # Test 2:
+    # Test 2
     b2 = Bank('Isabella', 70000, 'A2')
     expected_name2 = 'Isabella'
     expected_balance2 = 70000
     expected_account_number2 = 'A2'
     print("Expected:", expected_name2, expected_balance2, expected_account_number2)
     print("Actual:  ", b2.name, b2.balance, b2.account_number)
-    if (expected_name2 == b2.name) and (expected_balance2 == b2.balance) \
-            and (expected_account_number2 == b1.account_number):
+    if (expected_name2 == b2.name) and (expected_balance2 == b2.balance) and (
+            expected_account_number2 == b2.account_number):
         print("Test passed SUCCESSFULLY")
     else:
         print_failure_message()
     print()
 
-    # Test 3:
+    # Test 3
     b3 = Bank('Jenna', 100000, 'A3')
     expected_name = 'Jenna'
     expected_balance = 100000
     expected_account_number = 'A3'
     print("Expected:", expected_name, expected_balance, expected_account_number)
     print("Actual:  ", b3.name, b3.balance, b3.account_number)
-    if (expected_name == b3.name) and (expected_balance == b2.balance) and\
-            (expected_account_number == b2.account_number):
+    if (expected_name == b3.name) and (expected_balance == b3.balance) and (
+            expected_account_number == b3.account_number):
         print("Test passed SUCCESSFULLY")
     else:
         print_failure_message()
