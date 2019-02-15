@@ -5,8 +5,8 @@
 
 def main():
     # when you have initialized your object, use the calls below to test
-    # run_test_init()
-    # run_test_withdraw()
+    run_test_init()
+    run_test_withdraw()
     return
 
 
@@ -19,6 +19,10 @@ class Bank(object):
     """
 
     def __init__(self, name, initial_deposit, account_number):
+        self.name = name
+        self.initial_deposit = initial_deposit
+        self.account_number = account_number
+        self.balance = initial_deposit
         """
         What comes in:
           -- self
@@ -49,7 +53,7 @@ class Bank(object):
           :type account_number: str
         """
     # ---------------------------------------------------------------------
-    # TODO: 1. Implement and test instances of this class.
+    # DONE: 1. Implement and test instances of this class.
     #     See the testing code (scroll down near bottom) for more examples.
     # ---------------------------------------------------------------------
 
@@ -78,7 +82,7 @@ class Bank(object):
           #   an error message is printed because there are insufficient funds
         """
     # ---------------------------------------------------------------------
-    # TODO: 4. Implement and test the withdraw method
+    # DONE: 4. Implement and test the withdraw method
     #     Implement your own test code, before you write your method
     #     Insert your test code for withdraw, where indicated
     #     Scroll down near the bottom of this screen
@@ -86,6 +90,14 @@ class Bank(object):
     #   Put your code for withdraw below
     #
     # ---------------------------------------------------------------------
+    # Withdraw Code Here
+
+        if self.balance <= amount:
+            print('You cannot withdraw anything because you do not have any money')
+            return self.balance
+        else:
+            self.balance = self.balance - amount
+            return self.balance
 
 
 def run_test_init():
@@ -108,8 +120,34 @@ def run_test_init():
         print_failure_message()
     print()
     # ---------------------------------------------------------------------
-    # TODO: 2. Add two more test cases for your Bank class below.
+    # DONE: 2. Add two more test cases for your Bank class below.
     # ---------------------------------------------------------------------
+
+    # Test 2:
+    b2 = Bank('Isabella', 70000, 'A2')
+    expected_name = 'Isabella'
+    expected_balance = 70000
+    expected_account_number = 'A2'
+    print("Expected:", expected_name, expected_balance, expected_account_number)
+    print("Actual:  ", b2.name, b2.balance, b2.account_number)
+    if (expected_name == b2.name) and (expected_balance == b2.balance) and (expected_account_number == b1.account_number):
+        print("Test passed SUCCESSFULLY WOOH")
+    else:
+        print_failure_message()
+    print()
+
+    # Test 3:
+    b3 = Bank('Jenna', 100000, 'A3')
+    expected_name = 'Jenna'
+    expected_balance = 100000
+    expected_account_number = 'A3'
+    print("Expected:", expected_name, expected_balance, expected_account_number)
+    print("Actual:  ", b3.name, b3.balance, b3.account_number)
+    if (expected_name == b3.name) and (expected_balance == b2.balance) and (expected_account_number == b2.account_number):
+        print("Test passed SUCCESSFULLY WOOH")
+    else:
+        print_failure_message()
+    print()
 
 # ---------------------------------------------------------------------
 # TODO: 3. Implement your test for the withdraw method below
