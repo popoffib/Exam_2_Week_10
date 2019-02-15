@@ -150,10 +150,32 @@ def run_test_init():
     print()
 
 # ---------------------------------------------------------------------
-# TODO: 3. Implement your test for the withdraw method below
+# DONE: 3. Implement your test for the withdraw method below
 # ---------------------------------------------------------------------
+
+
 def run_test_withdraw():
-# Implement at least two tests.  Use copy and paste to speed your coding.
+    test_1 = Bank('Emma', 500, 'A4')
+    test_1.withdraw(200)
+    expected = 500 - 200
+    value = test_1.balance
+    print('expected =', expected)
+    print('answer =', value)
+    if expected == value:
+        print("SUCCESS")
+    else:
+        print_failure_message()
+
+    test_2 = Bank('Emma', 1000000, 'A4')
+    test_2.withdraw(1234)
+    expected = 1000000 - 1234
+    value = test_2.balance
+    print('expected =', expected)
+    print('answer =', value)
+    if expected == value:
+        print("SUCCESS")
+    else:
+        print_failure_message()
     pass
 
 
