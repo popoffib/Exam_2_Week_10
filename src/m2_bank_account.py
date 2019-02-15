@@ -57,7 +57,6 @@ class Bank(object):
     #     See the testing code (scroll down near bottom) for more examples.
     # ---------------------------------------------------------------------
 
-
     def withdraw(self, amount):
         """
         What comes in:
@@ -125,13 +124,14 @@ def run_test_init():
 
     # Test 2:
     b2 = Bank('Isabella', 70000, 'A2')
-    expected_name = 'Isabella'
-    expected_balance = 70000
-    expected_account_number = 'A2'
-    print("Expected:", expected_name, expected_balance, expected_account_number)
+    expected_name2 = 'Isabella'
+    expected_balance2 = 70000
+    expected_account_number2 = 'A2'
+    print("Expected:", expected_name2, expected_balance2, expected_account_number2)
     print("Actual:  ", b2.name, b2.balance, b2.account_number)
-    if (expected_name == b2.name) and (expected_balance == b2.balance) and (expected_account_number == b1.account_number):
-        print("Test passed SUCCESSFULLY WOOH")
+    if (expected_name2 == b2.name) and (expected_balance2 == b2.balance) \
+            and (expected_account_number2 == b1.account_number):
+        print("Test passed SUCCESSFULLY")
     else:
         print_failure_message()
     print()
@@ -143,8 +143,9 @@ def run_test_init():
     expected_account_number = 'A3'
     print("Expected:", expected_name, expected_balance, expected_account_number)
     print("Actual:  ", b3.name, b3.balance, b3.account_number)
-    if (expected_name == b3.name) and (expected_balance == b2.balance) and (expected_account_number == b2.account_number):
-        print("Test passed SUCCESSFULLY WOOH")
+    if (expected_name == b3.name) and (expected_balance == b2.balance) and\
+            (expected_account_number == b2.account_number):
+        print("Test passed SUCCESSFULLY")
     else:
         print_failure_message()
     print()
