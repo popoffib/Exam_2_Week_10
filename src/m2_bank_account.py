@@ -138,7 +138,7 @@ def run_test_init():
 
     # Test 3
     b3 = Bank('Jenna', 100000, 'A3')
-    expected_name = 'Jenna' 
+    expected_name = 'Jenna'
     expected_balance = 100000
     expected_account_number = 'A3'
     print("Expected:", expected_name, expected_balance, expected_account_number)
